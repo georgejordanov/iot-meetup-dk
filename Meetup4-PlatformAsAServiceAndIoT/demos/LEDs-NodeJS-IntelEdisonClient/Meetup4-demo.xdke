@@ -1,0 +1,62 @@
+{
+  "project": {
+    "projectSettingsVersion": "2.0.0",
+    "initialAutoPluginCount": 0,
+    "currentBuildConfiguration": null,
+    "projectFiles": {},
+    "projectDirectories": {}
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "icon.png": {
+        "previousModTime": 1458906363950,
+        "modified": 1458906363950,
+        "seen": true,
+        "name": "icon.png"
+      },
+      "main.js": {
+        "previousModTime": 1459364127520,
+        "modified": 1459364127520,
+        "seen": true,
+        "name": "main.js"
+      },
+      "Meetup4-demo.xdk": {
+        "previousModTime": 1458906364170,
+        "modified": 1458906364170,
+        "seen": true,
+        "name": "Meetup4-demo.xdk"
+      },
+      "Meetup4-demo.xdke": {
+        "previousModTime": 1459533307407,
+        "modified": 1459533307407,
+        "seen": true,
+        "name": "Meetup4-demo.xdke"
+      },
+      "package.json": {
+        "previousModTime": 1458906363950,
+        "modified": 1458906363950,
+        "seen": true,
+        "name": "package.json"
+      },
+      "README.md": {
+        "previousModTime": 1458906363950,
+        "modified": 1458906363950,
+        "seen": true,
+        "name": "README.md"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1458906364154,
+        "modified": 1458906364154,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      },
+      "device.json": {
+        "previousModTime": 1458931271422,
+        "modified": 1458931271422,
+        "seen": true,
+        "name": "device.json"
+      }
+    },
+    "boardFileStatus": {}
+  }
+}
