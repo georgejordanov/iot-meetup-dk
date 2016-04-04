@@ -1,0 +1,7 @@
+{
+  "org": "7lmfb9",
+  "type": "led-device",
+  "id": "rgb-led-meetup4",
+  "auth-method" : "token",
+  "auth-token" : "rgb-token"
+}

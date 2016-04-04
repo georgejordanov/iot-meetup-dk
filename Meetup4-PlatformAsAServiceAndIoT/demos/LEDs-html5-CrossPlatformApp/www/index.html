@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <!-- <script src="cordova.js"></script> -->
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+    <script type="application/javascript" src="js/app.js"></script>
+    <script type="application/javascript" src="js/init-app.js"></script>
+    <script type="application/javascript" src="js/index_user_scripts.js"></script>
+    <script type="application/javascript" src="xdk/ad/jqm_subpage.js"></script>
+    <script type="application/javascript" src="justgage/js/raphael.min.js"></script>
+    <script type="application/javascript" src="justgage/js/justgage.min.js"></script>
+    <script type="application/javascript" src="justgage/gauges.js"></script>
+  </head>
+
+  <body>
+    <div class="upage" id="mainpage" data-role="page">
+      <div class="upage-outer">
+        <div data-role="header" class="container-group inner-element uib_w_7" data-uib="jquery_mobile/header" data-ver="0">
+          <h1></h1>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"><a class="widget uib_w_18 d-margins" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="button-conn-stat">Connected</a>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col right"><a class="widget uib_w_17 d-margins hide-settings" data-uib="jquery_mobile/button" data-ver="0" data-role="button" data-icon="gear" id="button-tosettings" href="#uib-page-settings">Settings</a>
+          </div>
+        </div>
+        <div data-role="header" class="container-group inner-element uib_w_1" data-uib="jquery_mobile/header" data-ver="0" id="af-header-0">
+          <h1>IoT Denmark LED DEMO</h1>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content ac0 content-area vertical-col left" id="page_36_46">
+          <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col left">
+
+                <div class="widget uib_w_2 d-margins" data-uib="media/text" data-ver="0">
+                  <div class="widget-container left-receptacle"></div>
+                  <div class="widget-container right-receptacle"></div>
+                  <div>
+                    <p>Please select colors to be switched on:</p>
+                  </div>
+                </div>
+                <div class="table-thing with-label widget uib_w_3 d-margins" data-uib="jquery_mobile/flip_switch" data-ver="0" id="af-flipswitch-led-red">
+                  <label class="narrow-control label-inline">Red</label>
+                  <select data-role="slider" class="wide-control" id="select-led-red">
+                    <option value="off" selected="selected">OFF</option>
+                    <option value="on">ON</option>
+                  </select>
+                </div>
+                <div class="table-thing with-label widget uib_w_4 d-margins" data-uib="jquery_mobile/flip_switch" data-ver="0" id="af-flipswitch-led-green">
+                  <label class="narrow-control label-inline">Green</label>
+                  <select data-role="slider" class="wide-control" id="select-led-green">
+                    <option value="off" selected="selected">OFF</option>
+                    <option value="on">ON</option>
+                  </select>
+                </div>
+                <div class="table-thing with-label widget uib_w_5 d-margins" data-uib="jquery_mobile/flip_switch" data-ver="0" id="af-flipswitch-led-blue">
+                  <label class="narrow-control label-inline">Blue</label>
+                  <select data-role="slider" class="wide-control" id="select-led-blue">
+                    <option value="off" selected="selected">OFF</option>
+                    <option value="on">ON</option>
+                  </select>
+                </div>
+                <div class="widget uib_w_6 d-margins" data-uib="media/text" data-ver="0" id="result-out">
+                  <div class="widget-container left-receptacle"></div>
+                  <div class="widget-container right-receptacle"></div>
+                  <div>
+                    <p id="sent-to-leds">Sent to LED's:</p>
+                  </div>
+                </div><span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upage" id="uib-page-settings" data-role="page">
+      <div class="upage-outer">
+        <div data-role="header" class="container-group inner-element uib_w_10" data-uib="jquery_mobile/header" data-ver="0">
+          <h1>Settings </h1>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content ac0 content-area vertical-col left" id="page_9_37">
+          <div class="table-thing with-label widget uib_w_11 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+            <label class="narrow-control label-inline" for="textbox-settings-api-key">API key</label>
+            <input class="wide-control" placeholder="Your API key" type="text" id="textbox-settings-api-key">
+          </div>
+          <div class="table-thing with-label widget uib_w_12 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+            <label class="narrow-control label-inline" for="textbox-settings-api-token">API token</label>
+            <input class="wide-control" placeholder="Your API token" type="text" id="textbox-settings-api-token">
+          </div>
+          <div class="table-thing with-label widget uib_w_13 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+            <label class="narrow-control label-inline" for="textbox-settings-organization-id">Organization</label>
+            <input class="wide-control" placeholder="Organization ID" type="text" id="textbox-settings-organization-id">
+          </div>
+          <div class="table-thing with-label widget uib_w_14 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+            <label class="narrow-control label-inline" for="textbox-settings-device-type">Device Type</label>
+            <input class="wide-control" type="text" placeholder="Device type" id="textbox-settings-device-type">
+          </div>
+          <div class="table-thing with-label widget uib_w_15 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+            <label class="narrow-control label-inline" for="textbox-settings-device-id">Device</label>
+            <input class="wide-control" placeholder="Device ID" type="text" id="textbox-settings-device-id">
+          </div><a class="widget uib_w_16 d-margins" data-uib="jquery_mobile/button" data-ver="0" data-role="button" id="button-settigns-save" href="#mainpage">Save</a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
