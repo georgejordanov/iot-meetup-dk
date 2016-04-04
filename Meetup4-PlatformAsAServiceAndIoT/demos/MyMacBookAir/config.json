@@ -1,0 +1,9 @@
+{
+	"host": "YOUR_OWN_ENDPOINT.iot.eu-west-1.amazonaws.com",
+	"port": 8883,
+	"clientId": "MyMacBookComputer",
+	"thingName": "MyMacBookComputer",
+	"caCert": "root-CA.crt",
+	"clientCert": "480e837352-certificate.pem.crt",
+	"privateKey": "480e837352-private.pem.key"
+}
