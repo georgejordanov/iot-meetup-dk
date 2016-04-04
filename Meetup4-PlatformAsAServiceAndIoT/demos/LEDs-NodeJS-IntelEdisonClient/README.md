@@ -1,8 +1,8 @@
-PWM App
+IoT Meetup Demo App (Build using PWM template)
 ============================
 Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means.
 
-A simple node.js application intended to read and write analog values to fade a LED from Digital pins (PWM) on the Intel based development boards such as the Intel(R) Galileo and Edison with Arduino breakout board.
+A simple node.js application intended to read and write analog values to fade a LED from Digital pins (PWM) on the Intel based development boards such as the Intel(R) Galileo and Edison with Arduino breakout board and communicate with IBM Bluemix IoTF service.
 
 Intel(R) XDK 
 -------------------------------------------

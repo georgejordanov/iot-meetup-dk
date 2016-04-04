@@ -1,4 +1,4 @@
-Blank HTML App Designer Template for Building Packaged Mobile Web Apps
+Android MQTT client application (Based on blank HTML App Designer Template for Building Packaged Mobile Web Apps)
 ======================================================================
 
 Copyright © 2012-2015, Intel Corporation. All rights reserved.
