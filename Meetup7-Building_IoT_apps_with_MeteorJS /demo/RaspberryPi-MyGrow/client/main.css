@@ -1,0 +1,18 @@
+/* CSS declarations go here */
+
+
+
+ .frame{
+	border-color: black;
+    border: solid 10px;
+    border-radius: 20px;
+ }
+	
+	body{
+		background-color: aliceblue;
+		}    
+
+
+.container {
+    margin-top: 20px;
+}

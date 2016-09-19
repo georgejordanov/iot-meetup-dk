@@ -1,0 +1,101 @@
+<head>
+    <title>Gateway</title>
+    
+</head>
+
+<body>
+   <!--  {{> testList }} -->
+</body>
+
+<template name="testList">
+<div class="container">
+    <div class="well frame">
+    GateWay
+
+    <a href="#" class="insert">Insert</a>
+    <a href="#" class="delete">Delete</a>
+    <div class="well">
+    {{#each tests}}
+        {{> testItem}}
+    {{/each}}
+    </div>
+     </div>
+    <br>
+    <br>
+      
+    <div class="well frame">
+    {{#each controls}}
+        {{> testled}}
+    {{/each}}
+    </div>
+
+    <div class="well frame">
+       <div class="row"> 
+      <div class="col-md-6 well">
+        <!-- <div class="well">  -->
+        {{#each sensors}}
+        {{> testsensor}}
+        {{/each}}
+        <!-- </div>     -->
+      </div> 
+       <div class="col-md-6 well">
+        <h3> Last 6 readings: </h3>
+         <!-- <div class="well">  -->
+        {{#each sensorslist}}
+        {{> listsensor}}
+        {{/each}}
+        <!-- </div>     -->
+      </div> 
+      
+    </div>
+    <div class="row">
+        <!-- <button type="button" id="allstats" class="btn btn-success pull-right">All Readings</button>   -->
+    </div>
+    </div>
+
+    <div class="well frame">
+    {{> lineChart}}
+    </div>
+     
+ </div>       
+</template>
+
+<template name="testItem">
+    <li>
+        {{name}}, {{author}}, {{status}}
+    </li>
+</template>
+
+<template name="testled"> 
+     
+         
+            <label for="{{name}}">{{name}} </label>
+        <button type="button" name="{{name}}" id="{{name}}" class="btn {{#if checked}}btn-success{{else}}btn-danger{{/if}}">{{#if checked}}LED ON{{else}}LED OFF{{/if}}</button>
+         <!-- <textarea>{{time}}</textarea> -->
+     
+</template>
+
+
+
+<template name="testsensor"> 
+     
+            <h3>Sensor: {{name}}</h3>
+            <br>
+            <h4>Humidity: {{humidity}}%</h4>
+            <br>
+            <h4>Temperature {{temperature}}C</h4>
+            <br>
+            <h4>Time: {{time}} </h4>
+         
+          
+     
+</template>
+
+<template name="listsensor">
+    
+    <li>
+        <h6>  humidity: {{humidity}} temperature: {{temperature}} time: {{time}}  </h6>
+    </li>
+</template>
+
+

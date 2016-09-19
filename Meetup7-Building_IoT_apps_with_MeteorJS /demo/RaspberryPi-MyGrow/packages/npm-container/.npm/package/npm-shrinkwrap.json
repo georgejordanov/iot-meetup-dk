@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "ddp.js": {
+      "version": "1.1.0",
+      "dependencies": {
+        "wolfy87-eventemitter": {
+          "version": "4.3.0"
+        }
+      }
+    }
+  }
+}
