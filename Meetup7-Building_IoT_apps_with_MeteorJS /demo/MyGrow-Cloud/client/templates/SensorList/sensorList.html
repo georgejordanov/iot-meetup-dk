@@ -1,0 +1,410 @@
+ 
+
+<template name="sensorList">
+  <div class="container">
+
+    {{#if Template.subscriptionsReady}}
+
+    <div class="well frame">
+    <h2 class="text-center">Device --> {{#if macAddr}} {{this.macAddr}} {{/if}}</h2> 
+     <div class="row">
+    
+    <div class="col-md-6 well">
+    <a href="#" class="insert">Insert</a>
+    <a href="#" class="delete">Delete</a>
+    {{#each tests}}
+        {{> testItem}}
+    {{/each}}
+    </div>
+    <div class="col-md-6 well">
+        <h3>System:</h3>
+        <h4>Status:  {{#if status.online}} <h7 style="color: green;">Online</h7>  {{else}} <h7 style="color: red;">Offline</h7>{{/if}}  </h4> <h4>{{message}}</h4>
+        <hr>
+        <div class="row"><div class="col-md-6 col-lg-6 col-xs-6"><h4>restart</h4></div> <div class="col-md-6 col-lg-6 col-xs-6"><button id="device" class="btn btn-danger pull-right">device</button></div></div>
+        <div class="row"><div class="col-md-6 col-lg-6 col-xs-6"><h4>restart</h4></div> <div class="col-md-6 col-lg-6 col-xs-6"><button id="python" class="btn btn-danger pull-right">python</button></div></div>
+        <div class="row"><div class="col-md-6 col-lg-6 col-xs-6"><h4>system</h4></div> <div class="col-md-6 col-lg-6 col-xs-6"><button id="check" class="btn btn-danger pull-right">check</button></div></div>
+    </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+      
+    <div class="well frame">
+    {{#each controls}}
+        {{> testled}}
+    {{/each}}
+    </div>
+
+    <div class="well frame">
+       <div class="row"> 
+      <div class="col-md-6 well">
+        <!-- <div class="well">  -->
+        {{#each sensors}}
+        {{> testsensor}}
+        {{/each}}
+        <!-- </div>     -->
+      </div> 
+       <div class="col-md-6 well">
+        <h3> Last 6 readings: </h3>
+         <!-- <div class="well">  -->
+        {{#each sensorslist}}
+        {{> listsensor}}
+        {{/each}}
+        <!-- </div>     -->
+      </div> 
+      
+    </div>
+    <div class="row">
+        <!-- <button type="button" id="allstats" class="btn btn-success pull-right">All Readings</button>   -->
+    </div>
+    </div>
+
+    <div class="well frame" id="wellChart">
+    {{> lineChartTemp}}
+    </div>
+
+
+    <div class="well frame">
+        <div class="row">
+                  {{> CreateNotificationRule}}
+        </div>
+        
+        <div class="well">
+                <label>Created notifications rules</label>
+                <!-- LIST OF PENDING NOTIFICATIONS -->
+                    {{#each pendinglist}}
+                        {{> listnotifications}}
+                    {{/each}} 
+        </div>
+    </div>
+
+    <!-- <div class="well ">
+    {{> lineChartHumidity}}
+    </div> -->
+
+    <!-- <div class="well ">
+    {{> humidityTemp}}
+    </div> -->
+
+    {{else}}
+        <div class="loading"> 
+            <!-- <p><i class="fa fa-refresh fa-spin"> </i></p> -->
+            <p><i class="fa fa-spinner fa-pulse"></i></p>
+            <p>Loading...</p>
+
+        </div>
+            <img src="/img/SmartHouseBig.png" class="loading-app img-responsive img-rounded" /> 
+
+    {{/if}}
+
+     
+ </div>    
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="testItem">
+    <li>
+        {{name}}, {{author}}, {{status}}
+    </li>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="testled"> 
+
+
+    <!--  <div class="row">
+  <div class="col-lg-12 col-md-12">
+         
+            <label for="{{name}}" class="pull-left">{{name}} </label>
+        <button type="button" name="{{name}}" id="{{name}}" class="pull-right btn {{#if checked}}btn-success{{else}}btn-danger{{/if}}">{{#if checked}}LED ON{{else}}LED OFF{{/if}}</button>
+         </div> 
+     </div>
+ -->
+       
+
+
+
+
+      <div class="row">
+  <div class="col-lg-12 col-md-12">
+         
+            <label for="{{name}}" class="pull-left">{{name}} </label>
+        <a class="pull-right" name="{{name}}" id="{{name}}" title="{{macAddr}}">  {{#if checked}} <img class="radius btn led" src="/img/Green_Power_Button_clip_art.svg">{{else}}<img class="radius btn led" src="/img/Red_Power_Button_clip_art.svg">{{/if}} </a>
+
+         </div> 
+     </div>
+
+
+     
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="testsensor"> 
+         
+            <h3>Sensor: {{name}}</h3>
+            <br>
+            <h4>Humidity: {{humidity}}%</h4>
+            <br>
+            <h4>Temperature: {{temperature}}C</h4>
+            <br>
+            <h4>Time: {{time}} </h4>
+         
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="listsensor">
+    
+    <li>
+        <h6>  humidity: {{humidity}} temperature: {{temperature}} time: {{time}}  </h6>
+    </li>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="CreateNotificationRule">
+
+    <div class="col-md-12">
+        <form>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <h3>
+                        Create a Notification Rule
+                    </h3>
+                    <label for="title">Title</label>
+                    <!-- <input autofocus class="form-control" id="title" required type="text"> -->
+                    <input  class="form-control" id="title" required type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="5" style="resize:none"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Condition</label>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="sensorDropdown" data-toggle="dropdown" aria-haspopup="true">
+                                {{#if selectedSensor}}
+                                   <!--  {{selectedSensor.location}} &nbsp; - &nbsp; {{selectedSensor.type}} -->
+                                   {{selectedSensor}} 
+                                {{else}}
+                                   Sensor
+                                {{/if}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="sensorDropdown">
+                                <!-- {{#each sensor in list_of_sensors}}     -->
+                                {{#each type in  sensortype}}     
+                                   <!--  <li class="sensorItem" id="{{sensor._id}}"><a>{{sensor.location}} &nbsp; - &nbsp; {{sensor.type}}</a></li> -->
+                                    <li class="sensorItem" id="{{type}}"><a>{{type}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="operatorDropdown" data-toggle="dropdown" aria-haspopup="true">
+                                {{#if selectedOperator}}
+                                    {{selectedOperator}}
+                                {{else}}
+                                    Operator
+                                {{/if}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="operatorDropdown">
+                                {{#each operator in operatorList}}
+                                    <li class="operatorItem" id="{{operator}}"><a>{{operator}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <input id="targetValue" class="form-control" placeholder="Target value" type="text">
+                        <!-- <div class="input-group-btn">
+                            <button class="btn btn-default" id="AddConditionbtn" type="button">
+                                Add condition
+                            </button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+                    <div class="list-group">
+                        <a class="list-group-item active">Added conditions</a>
+                        <ul class="list-group">
+                            {{#each conditionInfo in get_conditionInfo}}
+                                <li class="list-group-item">
+                                    <strong>{{conditionInfo.sensor}}</strong>
+                                    &nbsp; - &nbsp; {{conditionInfo.location}} &nbsp; - &nbsp; {{conditionInfo.type}} &nbsp; {{conditionInfo.operator}} &nbsp; {{conditionInfo.targetValue}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <button class="btn btn-primary pull-right" id="SaveRuleSetbtn" type="button">   
+                        Create
+                    </button>
+                </div>
+            </form>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        {{> ErrorPage}}
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- <div class="col-md-6">
+        <h3>
+            Previously Created Rulesets
+        </h3>
+
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="rulesetDropdown" data-toggle="dropdown" aria-haspopup="true">
+                    {{#if selectedRuleset}}
+                        {{selectedRuleset.title}}
+                    {{else}}
+                        Choose a ruleset
+                    {{/if}}
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="rulesetDropdown">
+                    {{#each ruleset in get_rulesets}}
+                        <li class="rulesetItem" id="{{ruleset._id}}"><a>{{ruleset.title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="list-group">
+            <a class="list-group-item active">Associated conditions</a>
+            <ul class="list-group">
+                {{#each conditionInfo in get_ruleset_conditionInfo}}
+                    <li class="list-group-item">
+                        <strong>{{conditionInfo.sensor}}</strong> &nbsp; - &nbsp; {{conditionInfo.location}} &nbsp; - &nbsp; {{conditionInfo.type}} &nbsp; {{conditionInfo.operator}} &nbsp; {{conditionInfo.targetValue}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        
+    </div> -->
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="listnotifications">
+    
+    <div class="row">
+  <div class="col-lg-12 col-md-12">
+
+       
+      <label>  <li><h5>pending: {{pending}} -  sensor: {{sensor}}  - operator: {{operator}} - value: {{targetValue}}  </h5> </li></label>
+    {{#unless pending}}
+     <button class="btn btn-success pull-right activatenotificationrule"  type="button"> Activate </button> 
+    {{/unless}}               
+    <button class="btn btn-danger pull-right deletenotificationrule"  type="button"> Delete </button>
+                       
+
+
+   </div> 
+     </div>
+
+
+
+   
+</template>

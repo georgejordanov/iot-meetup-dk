@@ -1,0 +1,100 @@
+<!--  <head>
+    <title>Smartag</title>
+</head> -->
+
+
+
+
+<template name="main">
+  
+
+ 
+                                                                                       
+<div id="wrapper" class="{{menuOpen}} {{cordova}}">
+  
+    
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand wiped">
+                    <a href="/">
+                        MyGrow
+                    </a>
+                </li>
+  
+
+
+
+        <div class="list-todos">
+            {{#each devices}}
+                  <li class="wiped facebook"> <a href="{{pathFor 'sensorList'}}" class="list-todo {{activePlanClass}} hashroot" title="{{macAddr}}"><img class="radius" src="/img/devicepic.png"> {{macAddr}} </a></li> 
+                  <!-- <li class="wiped facebook"> <a class="list-todo {{activePlanClass}} hashroot" title="{{macAddr}}"> {{name}} </a></li>   -->         
+               
+            {{/each}}
+            <li class="wiped facebook"><a href="{{pathFor 'landing'}}" class="list-todo {{activePlanClass}}">Info Page</a></li> 
+             {{#if currentUser}}
+            <li class="wiped facebook"><a href="{{pathFor 'devices'}}" class="list-todo {{activePlanClass}}">Devices Management</a></li>
+            {{/if}}
+        </div>
+      </ul>
+   </div>
+
+
+  {{#unless connected}}
+      <div class="notifications">
+        <div class="notification">
+          <span class="icon-sync"></span>
+          <div class="meta">
+            <div class="title-notification">Trying to connect</div>
+            <div class="description">There seems to be a connection issue</div>
+          </div>
+        </div>
+      </div>
+    {{/unless}}
+    
+    <div class="content-overlay"></div>
+        
+       <div id="page-content-wrapper">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid1">
+              <a href="#menu-toggle" class="menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+             
+              
+             <!-- {{#if userName}}
+               <a class="list-todo  hashrootnav" title="{{userName}}"><img class="radius radiusnav img-responsive" src="{{userPic}}"> {{userName}} </a><button type="button" name="lock" class="btn {{#if userlock}}btn-danger{{else}}btn-success{{/if}} lock btn-xs">{{#if userlock}}UNLOCK{{else}}LOCK{{/if}}</button> 
+               {{/if}}
+             -->
+              
+              
+
+              <ul class="nav pull-right">
+                <li>
+                    {{>loginButtons}}
+                </li>
+            </ul>                
+          </div>
+       </nav>
+      
+        <div class="container-fluid">       
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                     <!--  <div class="navbar">
+
+                     <a href="#menu-toggle" class="menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                         </div> -->
+                    
+                      
+                      {{#each thisArray}}
+                        {{> yield}}
+                      {{/each}}
+                     </div> 
+                  </div> 
+                  <!-- <hr> -->
+               
+      </div>     
+    </div>
+
+    
+</div>          
+</template>
+
+

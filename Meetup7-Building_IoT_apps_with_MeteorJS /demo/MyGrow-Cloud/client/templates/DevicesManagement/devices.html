@@ -1,0 +1,78 @@
+	<template name="devices">
+		<div class="content-scrollable">
+        <div class="wrapper-auth">
+		<div class="well">
+			<h1>Devices Management</h1>
+
+			 	<div class="row">
+			 		<div class="col-lg-6 col-md-6">
+			 			<h2 class="title-auth"> Status</h2>
+			 			<hr>
+			 			{{#each device in userdevice}}
+
+                  			<ul class="wiped facebook"> <a href="/device/{{device._id}}" class="list-todo {{activePlanClass}} {{device._id}}  hashrootdevice" title="{{macAddr}}"  data-value="{{device._id}}"><img class="radius" src="/img/devicepic.png">  </a> {{device.macAddr}}
+
+                  			<span class=" pull-right"><i class="fa fa-times deviceremove fa-3x" data-value="{{device._id}}" name="deviceremove" aria-hidden="true"></i></span>	
+
+
+                  			</ul> 
+                  <!-- <li class="wiped facebook"> <a class="list-todo {{activePlanClass}} hashroot" title="{{macAddr}}"> {{name}} </a></li>   -->         
+               				<ul>
+               				<li class="wiped facebook"> status: {{#if device.status.online}} <h7 style="color: green;">Online</h7>  {{else}} <h7 style="color: red;">Offline</h7>{{/if}} </li>
+               				<li class="wiped facebook"> email:  {{device.emails.[0].address}}</li>
+               				<li class="wiped facebook"> lastLogin: {{device.status.lastLogin.date}}</li>
+               				<li class="wiped facebook"> IP Address: {{device.status.lastLogin.ipAddr}}</li></ul>
+           				 {{/each}}
+			 		</div>
+			 		<div class="col-lg-6 col-md-6">
+			 			<h2 class="title-auth">Create device account</h2>
+			 			<hr>
+			 				<form>
+						          {{#if errorMessages}}
+						            <div class="list-errors">
+						              {{#each errorMessages}}
+						                <div class="list-item">{{this}}</div>
+						              {{/each}}
+						            </div>
+						          {{/if}}
+
+						          <div class="input-symbol wiped facebook {{errorClass 'email'}}">
+						            <input type="email" name="email" placeholder="Your Email" />
+						            <span class="icon-email" title="Your Email"></span>
+						          </div>
+
+						          <div class="input-symbol wiped facebook {{errorClass 'password'}}">
+						            <input type="password" name="password" placeholder="Password" />
+						            <span class="icon-lock" title="Password"></span>
+						          </div>
+
+						          <div class="input-symbol wiped facebook {{errorClass 'confirm'}}">
+						            <input type="password" name="confirm" placeholder="Confirm Password" />
+						            <span class="icon-lock" title="Confirm Password"></span>
+						          </div>
+
+						          <!-- <div class="input-symbol {{errorClass 'FistName'}}">
+						            <input type="text" name="firstname" placeholder="Your First Name" />
+						            <span class="icon-lock" title="Your First Name"></span>
+						          </div>
+
+						          <div class="input-symbol {{errorClass 'LastName'}}">
+						            <input type="text" name="lastname" placeholder="Your Last Name" />
+						            <span class="icon-lock" title="Your Last Name"></span>
+						          </div> -->
+
+						          <button type="submit" class="btn-primary">Create</button>
+					        </form>
+
+			 		</div>
+			 	</div>	
+		</div>
+		</div>
+		</div>	
+
+	</template>	
+
+
+
+
+	

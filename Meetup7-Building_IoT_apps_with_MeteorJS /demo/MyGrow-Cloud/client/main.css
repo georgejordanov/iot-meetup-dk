@@ -1,0 +1,560 @@
+/* CSS declarations go here */
+
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+
+ .frame{
+	border-color: black;
+    border: solid 10px;
+    border-radius: 20px;
+ }
+	
+	body{
+		background-color: aliceblue;
+		}    
+
+.container-fluid {
+	margin-top: 20px;
+    padding-top: 20px;
+}
+
+.accounts-dialog {
+    border: 1px solid #cccccc;
+    z-index: 1000;
+    background: white;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: -8px -12px 0 -250px;
+    width: 250px;
+    
+}
+
+
+#login-buttons a, .accounts-dialog a {
+    cursor: pointer;
+     text-decoration: none;
+}
+
+a, a:hover {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.login-link-text a{
+	    margin-right: 25px;
+}
+
+
+ #menu {
+    border-left-width: 0px;
+    margin-left: 10px;
+    /*padding-right: 59px;*/
+    margin-top: 25px;
+    padding-left: 20px;
+ }
+
+ #content-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    border-left: thick double  rgb(238, 238, 238);
+    border-right: thick double  rgb(238, 238, 238);
+    
+ }
+
+ h3,h2.title {
+    text-align: center;
+}
+
+/*h3  {
+    background-color: #5BFF02;
+}*/
+
+form.active {
+ border-radius: 1em;
+    border: 4px solid #5BFF02;
+    border-radius: 1em;
+    margin-bottom: 10px;
+}
+
+div.foot {
+ text-align: :center;
+}
+
+h2.extract {
+    text-align: :center;
+}
+
+form.treatment {
+
+    background-color: rgb(155, 153, 153);
+    border: 4px solid #111110;
+    border-radius: 1em;
+    margin-bottom: 10px;
+}
+
+h3.treatment {
+
+        background-color: #c9302c;
+
+}
+
+
+form.blue {
+
+    background-color: lightblue;
+    border: 4px solid #5F86EF;
+    border-radius: 1em;
+    margin-bottom: 10px;
+}
+
+h3.blue {
+
+        background-color: #5F86EF;
+}
+
+button.blue {
+   
+}
+
+a.btn-secondary {
+    margin:10px;
+}
+
+button.register {
+    margin:10px;
+}
+
+button.done {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#menu {
+    margin-bottom: 30px;
+}
+
+a.menu {
+    text-align: center;
+}
+
+#container {
+        background: azure;
+}
+
+@media screen and (min-width: 1640px) {
+  #menu {
+        position: fixed;
+    }
+}
+
+a.activ {
+    border: 2px solid;
+    padding: 10px;
+    background: #dddddd;
+    border-radius: 1em;
+}
+
+div.foot {
+    margin-top: 150px;
+}
+
+
+
+
+
+
+
+/* CSS declarations go here */
+
+
+body {
+    color: black;
+    font-family: arial;
+    margin: 0;
+}
+
+#header {
+    background-color: #D7D6C4;
+    font-family: 'Josefin Slab', serif;
+    padding: 30px 20px;
+}
+
+#header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+#header h2 {
+    margin: 0px 0px 20px 0px;
+    font-size: 26px;
+    color: #767450;
+}
+
+#content {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+#header ul {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+#header ul li {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+#header ul li a, #header ul li a:hover, #header ul li a:visited {
+    color: black;
+}
+
+input {
+    border: 1px solid #767450;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+label {
+    /*display: block;
+    float: left;*/
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 20px;
+    padding: 5px 0;
+    text-align: right;
+    /*width: 250px;*/
+}
+
+.button {
+    border-radius: 3px;
+    background-color: #FF6600;
+    color: white;
+    padding: 5px 40px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-left: 270px;
+}
+
+.row {
+    padding: 10px 0;
+}
+
+/*.row:last-child {
+    margin-top: 20px;
+}*/
+
+ul.notifications {
+position: fixed;
+}
+
+
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #090808;
+}
+
+
+.btn-success:hover {
+    color: #FFF;
+    background-color: #5cb85c;
+    border-color: #090808;
+}
+
+
+
+
+/*SIDEBAR*/
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+    
+   
+
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    top: 0px;
+}
+
+.navbar-inverse {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    left: 0px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+ 
+#wrapper.toggled .navbar-inverse {
+    left: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+        top: 0px;
+    }
+
+    .navbar-inverse {
+        left: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #wrapper.toggled .navbar-inverse {
+    left: 0px;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+.menu-toggle {
+        height: 50px;
+    padding: 5px 9px;
+    font-size: 21px;
+    line-height: 20px;
+    
+    color: #FFF;
+}
+
+#menu-toggle  a:hover {
+        
+    border: 2px solid #FFF;
+     border-radius: 5px;
+     color: #FFFFFF;
+}
+
+/*more styles*/
+
+#page-content-wrapper {
+    background: azure;
+
+    }
+
+    .container-fluid1 {
+        margin-top: 12px;
+    }
+
+     h5.navtext,h4.navtext {
+        display: inline;
+        color:white;
+    }
+
+.fa-bars {
+    color: #FFFFFF;
+}
+
+
+
+
+/*Plans CSS*/
+
+.firstel {    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+ 
+
+ .facebook {
+    padding-bottom: 15px;
+
+ }
+
+
+.radius {
+    border-radius: 30px;
+    border: 1px solid #fcf8e3;
+    margin-right: 10px;
+}
+
+
+
+
+
+.login-display-name {
+     color: #FFFFFF;
+}
+
+
+button.map {
+    float: right;
+}
+
+button.lock {
+    /*float: right;*/
+    display: inline;
+}
+
+/*h3.maptitle {
+    float: left;
+}*/
+
+
+a.hashrootnav {
+    color:white;
+    text-decoration: none;
+}
+
+.hashrootnav a:hover {
+    color: #FFFFFF;
+}
+
+img.radiusnav {
+    width: 30px;
+    display: inline;
+}
+
+
+/*@media(max-width:768px) {
+
+img.radiusnav {
+    width: 7.2%;
+}
+
+
+}*/
+
+
+   
+    
+
+    .activatenotificationrule {
+      margin-left: 30px; 
+
+}
+
+
+
+
+
+.loading{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+     
+  }
+
+  .loading p {
+    font-size: 4em;
+     
+  }

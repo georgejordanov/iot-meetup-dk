@@ -1,0 +1,15 @@
+<template name="ErrorPage">
+    {{#if errorText}}
+        <div class="form-signin col-md-12">
+            <div id="alert" class="alert alert-danger fade in" role="alert">
+                <p>{{errorText}}</p>
+            </div>
+            <script>
+                $("#alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#alert").alert('close');
+                    Session.set('error-text', undefined);
+                });
+            </script>
+        </div>
+    {{/if}}
+</template>

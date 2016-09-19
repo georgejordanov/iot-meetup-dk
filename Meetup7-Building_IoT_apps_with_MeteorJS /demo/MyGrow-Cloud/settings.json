@@ -1,0 +1,28 @@
+ 
+
+
+
+
+ 
+
+
+{
+
+	"galaxy.meteor.com": {
+		"env": {
+
+			"MONGO_URL": "mongodb://<user>:<password>@<databaseURL>:<PORT>/<DATABASENAME>" 
+
+
+		}
+
+	}
+
+
+
+
+
+}
+
+
+
